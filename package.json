@@ -4,8 +4,9 @@
   "description": "A CLI to convert Bitcoin into any currency provided",
   "main": "index.js",
   "scripts": {
-    "clear": "rimraf lib",
-    "build": "npm run clear && ./node_modules/.bin/babel --out-dir bin src",
+    "clear": "rimraf bin",
+    "babel-cli": "./node_modules/.bin/babel --out-dir bin src",
+    "build": "npm run clear && npm run babel-cli",
     "build:watch": "npm run build -- --watch",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
